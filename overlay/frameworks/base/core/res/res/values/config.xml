@@ -77,12 +77,14 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
+        <item>"wlan0"</item> 
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
          should be empty. -->
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
+         <item>"bt-pan"</item>
     </string-array>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
@@ -278,7 +280,7 @@
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Set lowmemorykiller threshold -->
-    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">-1</integer>
+    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">65536</integer>
     <integer name="config_lowMemoryKillerMinFreeKbytesAdjust">0</integer>
 
     <!-- Enable doze powersaving -->
