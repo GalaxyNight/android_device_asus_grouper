@@ -1,5 +1,5 @@
-# Copyright (C) 2015 The Android Open Source Project
-# Written by Dmitry Grinberg
+#
+# Copyright (C) 2017 The Unlegacy Android Project 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 LOCAL_PATH := $(call my-dir)
-
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_SRC_FILES := sensors-config.c
-LOCAL_MODULE := sensors-config
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_EXECUTABLE)
+LOCAL_SRC_FILES := \
+	libnvossh.c
+
+LOCAL_CFLAGS := -Wall -Werror -DLOG_TAG=\"libnvossh\"
+
+LOCAL_SHARED_LIBRARIES := \
+	liblog \
+	libstdc++
+
+LOCAL_MODULE := libnvossh
+
+include $(BUILD_SHARED_LIBRARY)
